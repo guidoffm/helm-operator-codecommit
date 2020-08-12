@@ -2,6 +2,13 @@
 - task: Docker@2
   inputs:
     containerRegistry: 'DockerHub'
+    repository: 'guidoffm/helm-operator-codecommit'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    tags: '1.2.0'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerHub'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
     tags: '1.2.0'
